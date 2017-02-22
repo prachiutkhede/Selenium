@@ -5,23 +5,27 @@
 	<artifactId>poiexample2</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <poi.version>3.16-beta1</poi.version>
+    </properties>
+    
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.16-beta1</version>
+			<version>${poi.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.16-beta1</version>
+			<version>${poi.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
-			<version>3.16-beta1</version>
+			<version>${poi.version}</version>
 		</dependency>
 
 	</dependencies>

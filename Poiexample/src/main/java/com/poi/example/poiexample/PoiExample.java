@@ -1,8 +1,11 @@
 package com.poi.example.poiexample;
 
+import java.io.File;
 import java.io.FileInputStream;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -15,7 +18,10 @@ public class PoiExample {
     private XSSFSheet sheet = null;
 
     public PoiExample(String fileName) throws IOException {
-        fs = new FileInputStream(fileName);
+        this(new FileInputStream(fileName));      
+    }
+    
+    public PoiExample(FileInputStream fs) throws IOException {
         wb = new XSSFWorkbook(fs);
         sheet = wb.getSheet("register");      
     }
@@ -51,10 +57,12 @@ public class PoiExample {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        String xlsfileName = "/Users/prachiutkhede/git/Selenium/Poiexample/src/main/resources/Poiexcelsheet.xlsx";
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        URL resource =  PoiExample.class.getClass().getResource("/Poiexcelsheet.xlsx");
+        File file = new File(resource.toURI());
+        FileInputStream xlsxFileStream = new FileInputStream(file);
         
-        PoiExample poiExample = new PoiExample(xlsfileName);
+        PoiExample poiExample = new PoiExample(xlsxFileStream);
         poiExample.printSheet();
         
         System.out.println("\nRow 0 Col 0: " + poiExample.getCelldata(1, 0));
