@@ -5,10 +5,10 @@
 	<artifactId>poiexample2</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
-    <properties>
-        <poi.version>3.16-beta1</poi.version>
-    </properties>
-    
+	<properties>
+		<poi.version>3.16-beta1</poi.version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
